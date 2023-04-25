@@ -3,7 +3,12 @@ const authorInput = document.getElementsByName('author')[0];
 const addBtn = document.getElementsByName('add')[0];
 
 const savedBookData = localStorage.getItem('books-data');
-const data = savedBookData ? JSON.parse(savedBookData) : [];
+let data = savedBookData ? JSON.parse(savedBookData) : [];
+
+const updateLocalStorageBookData = (id) => {
+  data = data.filter((e) => e.id !== id);
+  console.log(data);
+};
 
 const saveBookForm = () => {
   localStorage.setItem('books-data', JSON.stringify(data));
@@ -48,6 +53,15 @@ const breakline = () => {
   booksContainer.appendChild(hr);
 };
 
+const removeButton = (btn) => {
+  btn.addEventListener('click', (event) => {
+    updateLocalStorageBookData(Number(event.target.id));
+    saveBookForm();
+    const element = document.querySelector(`.item${event.target.id}`);
+    element.remove();
+  });
+};
+
 if (addBtn) {
   addBtn.addEventListener('click', () => {
     const bookDetials = {
@@ -57,14 +71,21 @@ if (addBtn) {
     };
     data.push(bookDetials);
     saveBookForm();
-    const { bookItemDiv } = addBookToList(bookDetials);
+    const { bookItemDiv, btnRemove } = addBookToList(bookDetials);
     booksContainer.appendChild(bookItemDiv);
+    removeButton(btnRemove);
     breakline();
   });
 }
 
 data.forEach((e) => {
   const { bookItemDiv } = addBookToList(e);
+  console.log(addBookToList(e));
   booksContainer.appendChild(bookItemDiv);
   breakline();
+});
+
+const removeBtns = document.querySelectorAll('.btn-remove');
+removeBtns.forEach((btn) => {
+  removeButton(btn);
 });
