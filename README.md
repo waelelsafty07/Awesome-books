@@ -136,9 +136,8 @@ Opening the index.html with your browser
 
 👤 **Foga Kater Amos**
 
-- GitHub: [@githubhandle](https://github.com/katfogy)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/foga-amos-2b5371103/)
+- GitHub: [@githubhandle](https://github.com/waelelsafty07)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/waelelsafty07/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
