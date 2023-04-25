@@ -53,7 +53,7 @@ const breakline = () => {
   booksContainer.appendChild(hr);
 };
 
-const removeButton = (btn) => {
+const removeBook = (btn) => {
   btn.addEventListener('click', (event) => {
     updateLocalStorageBookData(Number(event.target.id));
     saveBookForm();
@@ -73,7 +73,7 @@ if (addBtn) {
     saveBookForm();
     const { bookItemDiv, btnRemove } = addBookToList(bookDetials);
     booksContainer.appendChild(bookItemDiv);
-    removeButton(btnRemove);
+    removeBook(btnRemove);
     breakline();
   });
 }
@@ -87,5 +87,5 @@ data.forEach((e) => {
 
 const removeBtns = document.querySelectorAll('.btn-remove');
 removeBtns.forEach((btn) => {
-  removeButton(btn);
+  removeBook(btn);
 });
