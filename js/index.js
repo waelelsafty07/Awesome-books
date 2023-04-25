@@ -29,24 +29,14 @@ const createRemove = (id) => {
 const addBookToList = (book) => {
   const bookItemDiv = div('div');
   bookItemDiv.className = `book-item item${book.id}`;
-  const titleDiv = div('div', book.title);
+  const titleDiv = div('div', `"${book.title}" by ${book.author}`);
   bookItemDiv.appendChild(titleDiv);
-  const authorDiv = div('div', book.author);
-  bookItemDiv.appendChild(authorDiv);
   const btnRemove = createRemove(book.id);
   bookItemDiv.appendChild(btnRemove);
   return { bookItemDiv, btnRemove };
 };
 
-const breakline = (id) => {
-  const hr = document.createElement('hr');
-  hr.className = `hr${id}`;
-  const br = document.createElement('br');
-  br.className = `br${id}`;
 
-  booksContainer.appendChild(br);
-  booksContainer.appendChild(hr);
-};
 const removeContent = (text) => {
   const element = document.querySelector(text);
   element.remove();
@@ -55,8 +45,6 @@ const removeBook = (btn) => {
   btn.addEventListener('click', (event) => {
     book.removeBook(Number(event.target.id));
     removeContent(`.item${event.target.id}`);
-    removeContent(`.hr${event.target.id}`);
-    removeContent(`.br${event.target.id}`);
   });
 };
 
@@ -80,7 +68,7 @@ if (addBtn) {
     const { bookItemDiv, btnRemove } = addBookToList(bookDetials);
     booksContainer.appendChild(bookItemDiv);
     removeBook(btnRemove);
-    breakline(bookDetials.id);
+  
     titleInput.value = '';
     authorInput.value = '';
     return true;
@@ -90,7 +78,6 @@ const dataOfBooks = book.getLocalStorage();
 dataOfBooks.forEach((e) => {
   const { bookItemDiv } = addBookToList(e);
   booksContainer.appendChild(bookItemDiv);
-  breakline(e.id);
 });
 
 const removeBtns = document.querySelectorAll('.btn-remove');

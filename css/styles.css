@@ -3,3 +3,49 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.display-book {
+  border: 2px solid black;
+  margin: 20px;
+  
+}
+.books::after {
+  content: '';
+  border-bottom: 2px solid #000 ;
+  margin: 1rem auto;
+  width: 15%;
+  display: block;
+
+}
+
+input {
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+.book-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px;
+
+}
+
+.book-item:nth-child(odd) {
+  background-color: #eee;
+}
+
+.add-book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.btn-add {
+  display: flex;
+  justify-content: right;
+}
+
