@@ -46,19 +46,26 @@ const addBookToList = (book) => {
   return { bookItemDiv, btnRemove };
 };
 
-const breakline = () => {
+const breakline = (id) => {
   const hr = document.createElement('hr');
+  hr.className = `hr${id}`;
   const br = document.createElement('br');
+  br.className = `br${id}`;
+
   booksContainer.appendChild(br);
   booksContainer.appendChild(hr);
 };
-
+const removeContent = (text) => {
+  const element = document.querySelector(text);
+  element.remove();
+};
 const removeBook = (btn) => {
   btn.addEventListener('click', (event) => {
     updateLocalStorageBookData(Number(event.target.id));
     saveBookForm();
-    const element = document.querySelector(`.item${event.target.id}`);
-    element.remove();
+    removeContent(`.item${event.target.id}`);
+    removeContent(`.hr${event.target.id}`);
+    removeContent(`.br${event.target.id}`);
   });
 };
 
@@ -74,7 +81,7 @@ if (addBtn) {
     const { bookItemDiv, btnRemove } = addBookToList(bookDetials);
     booksContainer.appendChild(bookItemDiv);
     removeBook(btnRemove);
-    breakline();
+    breakline(bookDetials.id);
   });
 }
 
@@ -82,7 +89,7 @@ data.forEach((e) => {
   const { bookItemDiv } = addBookToList(e);
   console.log(addBookToList(e));
   booksContainer.appendChild(bookItemDiv);
-  breakline();
+  breakline(e.id);
 });
 
 const removeBtns = document.querySelectorAll('.btn-remove');
