@@ -85,11 +85,11 @@ if (addBtn) {
   });
 }
 
-data.forEach((e) => {
-  const { bookItemDiv } = addBookToList(e);
+data.forEach((book) => {
+  const { bookItemDiv } = addBookToList(book);
   console.log(addBookToList(e));
   booksContainer.appendChild(bookItemDiv);
-  breakline(e.id);
+  breakline(book.id);
 });
 
 const removeBtns = document.querySelectorAll('.btn-remove');
