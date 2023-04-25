@@ -1,19 +1,11 @@
+import Book from './main.js';
+
+const book = new Book();
+
 const titleInput = document.getElementsByName('title')[0];
 const authorInput = document.getElementsByName('author')[0];
 const addBtn = document.getElementsByName('add')[0];
-
-const savedBookData = localStorage.getItem('books-data');
-let data = savedBookData ? JSON.parse(savedBookData) : [];
-
-const updateLocalStorageBookData = (id) => {
-  data = data.filter((e) => e.id !== id);
-  console.log(data);
-};
-
-const saveBookForm = () => {
-  localStorage.setItem('books-data', JSON.stringify(data));
-};
-
+const erroMsg = document.querySelector('.error-msg');
 const booksContainer = document.querySelector('.display-book');
 
 const div = (tag, text) => {
@@ -61,33 +53,42 @@ const removeContent = (text) => {
 };
 const removeBook = (btn) => {
   btn.addEventListener('click', (event) => {
-    updateLocalStorageBookData(Number(event.target.id));
-    saveBookForm();
+    book.removeBook(Number(event.target.id));
     removeContent(`.item${event.target.id}`);
     removeContent(`.hr${event.target.id}`);
     removeContent(`.br${event.target.id}`);
   });
 };
 
+const emptyValue = (bookDetials) => {
+  if (bookDetials.title === '' || bookDetials.author === '') return true;
+  return false;
+};
 if (addBtn) {
   addBtn.addEventListener('click', () => {
     const bookDetials = {
-      id: data.length + 1,
       title: titleInput.value,
       author: authorInput.value,
     };
-    data.push(bookDetials);
-    saveBookForm();
+    if (emptyValue(bookDetials)) {
+      const divError = div('li', 'title and author must be not be empty');
+      erroMsg.innerHTML = divError.innerHTML;
+      return false;
+    }
+    erroMsg.innerHTML = '';
+    book.addBook(bookDetials);
     const { bookItemDiv, btnRemove } = addBookToList(bookDetials);
     booksContainer.appendChild(bookItemDiv);
     removeBook(btnRemove);
     breakline(bookDetials.id);
+    titleInput.value = '';
+    authorInput.value = '';
+    return true;
   });
 }
-
-data.forEach((e) => {
+const dataOfBooks = book.getLocalStorage();
+dataOfBooks.forEach((e) => {
   const { bookItemDiv } = addBookToList(e);
-  console.log(addBookToList(e));
   booksContainer.appendChild(bookItemDiv);
   breakline(e.id);
 });
