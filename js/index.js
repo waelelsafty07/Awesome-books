@@ -7,7 +7,6 @@ let data = savedBookData ? JSON.parse(savedBookData) : [];
 
 const updateLocalStorageBookData = (id) => {
   data = data.filter((e) => e.id !== id);
-  console.log(data);
 };
 
 const saveBookForm = () => {
@@ -87,7 +86,6 @@ if (addBtn) {
 
 data.forEach((book) => {
   const { bookItemDiv } = addBookToList(book);
-  console.log(addBookToList(e));
   booksContainer.appendChild(bookItemDiv);
   breakline(book.id);
 });
