@@ -5,7 +5,9 @@ const book = new Book();
 const titleInput = document.getElementsByName('title')[0];
 const authorInput = document.getElementsByName('author')[0];
 const addBtn = document.getElementsByName('add')[0];
+
 const erroMsg = document.querySelector('.error-msg');
+
 const booksContainer = document.querySelector('.display-book');
 
 const div = (tag, text) => {
@@ -74,11 +76,12 @@ if (addBtn) {
     return true;
   });
 }
+
 const dataOfBooks = book.getLocalStorage();
-dataOfBooks.forEach((e) => {
-  const { bookItemDiv } = addBookToList(e);
+dataOfBooks.forEach((book) => {
+  const { bookItemDiv } = addBookToList(book);
   booksContainer.appendChild(bookItemDiv);
-});
+
 
 const removeBtns = document.querySelectorAll('.btn-remove');
 removeBtns.forEach((btn) => {

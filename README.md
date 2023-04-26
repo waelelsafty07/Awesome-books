@@ -130,6 +130,17 @@ Opening the index.html with your browser
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- AUTHORS -->
+
+## 👥 Author <a name="authors">Foga Kater Amos</a>
+
+👤 **Foga Kater Amos**
+
+- GitHub: [@githubhandle](https://github.com/waelelsafty07)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/waelelsafty07/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
