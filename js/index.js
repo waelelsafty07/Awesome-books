@@ -82,6 +82,7 @@ dataOfBooks.forEach((book) => {
   const { bookItemDiv } = addBookToList(book);
   booksContainer.appendChild(bookItemDiv);
 
+});
 
 const removeBtns = document.querySelectorAll('.btn-remove');
 removeBtns.forEach((btn) => {

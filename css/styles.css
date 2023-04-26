@@ -7,15 +7,14 @@
 .display-book {
   border: 2px solid black;
   margin: 20px;
-  
 }
+
 .books::after {
   content: '';
-  border-bottom: 2px solid #000 ;
+  border-bottom: 2px solid #000;
   margin: 1rem auto;
   width: 15%;
   display: block;
-
 }
 
 input {
@@ -30,7 +29,6 @@ h1 {
   display: flex;
   justify-content: space-between;
   padding: 2px;
-
 }
 
 .book-item:nth-child(odd) {
@@ -43,9 +41,7 @@ h1 {
   align-items: center;
 }
 
-
 .btn-add {
   display: flex;
   justify-content: right;
 }
-
