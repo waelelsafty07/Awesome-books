@@ -6,7 +6,7 @@
 
 .display-book {
   border: 2px solid black;
-  margin: 20px;
+  margin: 1rem;
 }
 
 .books::after {
@@ -21,7 +21,8 @@ input {
   width: 100%;
 }
 
-h1, h2 {
+h1,
+h2 {
   text-align: center;
 }
 
@@ -70,6 +71,14 @@ ul {
 }
 
 ul li {
-  border-right: 2px solid black;
   padding: 1rem;
+}
+
+ul li:not(:last-child) {
+  border-right: 2px solid black;
+}
+
+.time {
+  text-align: right;
+  margin: 1rem;
 }
