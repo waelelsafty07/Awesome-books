@@ -21,7 +21,7 @@ input {
   width: 100%;
 }
 
-h1 {
+h1, h2 {
   text-align: center;
 }
 
@@ -46,6 +46,30 @@ h1 {
   justify-content: right;
 }
 
+a.active {
+  color: blue;
+}
+
 section:not(.active) {
   display: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+  align-items: center;
+  margin: 1rem;
+}
+
+ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  align-items: center;
+}
+
+ul li {
+  border-right: 2px solid black;
+  padding: 1rem;
 }
