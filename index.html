@@ -9,16 +9,24 @@
     <title>Awesome Book</title>
 </head>
 <body>
-    <header class="header">
-        <h1>Awesome Book</h1>
-    </header>
+    
+    <nav>
+        <a>Awesome Book</a>
+        <ul>
+            <li><a href="#" class="active" data-target="display-books">List</a></li>
+            <li><a href="#" data-target="add-book">Add new</a></li>
+            <li><a href="#" data-target="contact">Contact</a></li>
+        </ul>
+    </nav>
 
     <main> 
-        <section class="display-book">
+        <section id="display-books" class="active">
+            <h2>All Awesome books</h2>
+            <div class="display-book">
+                
+            </div>
         </section>
-        <section class="add-book">
-            
-            <hr>
+        <section   id="add-book" class="add-book">
             <h2>Add a new book</h2>
             
             <form>
@@ -38,6 +46,7 @@
                 </div>
             </form>
         </section>
+        
     </main>
     <script type="module" src="js/index.js"></script>
 </body>
