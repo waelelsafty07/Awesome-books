@@ -82,3 +82,8 @@ ul li:not(:last-child) {
   text-align: right;
   margin: 1rem;
 }
+
+footer div {
+  margin: 1rem;
+  border: 2px solid black;
+}
