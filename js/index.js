@@ -38,7 +38,6 @@ const addBookToList = (book) => {
   return { bookItemDiv, btnRemove };
 };
 
-
 const removeContent = (text) => {
   const element = document.querySelector(text);
   element.remove();
@@ -70,7 +69,7 @@ if (addBtn) {
     const { bookItemDiv, btnRemove } = addBookToList(bookDetials);
     booksContainer.appendChild(bookItemDiv);
     removeBook(btnRemove);
-  
+
     titleInput.value = '';
     authorInput.value = '';
     return true;
@@ -81,7 +80,6 @@ const dataOfBooks = book.getLocalStorage();
 dataOfBooks.forEach((book) => {
   const { bookItemDiv } = addBookToList(book);
   booksContainer.appendChild(bookItemDiv);
-
 });
 
 const removeBtns = document.querySelectorAll('.btn-remove');
