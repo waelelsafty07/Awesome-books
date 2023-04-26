@@ -86,3 +86,22 @@ const removeBtns = document.querySelectorAll('.btn-remove');
 removeBtns.forEach((btn) => {
   removeBook(btn);
 });
+
+const links =document.querySelectorAll('nav a');
+
+links.forEach((link) => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = link.getAttribute('data-target');
+    document.querySelectorAll('nav a').forEach((link) => {
+      link.classList.remove('active');
+    })
+    document.querySelectorAll('section').forEach((section) => {
+      section.classList.remove('active');
+    })
+
+    link.classList.add('active');
+    document.getElementById(target).classList.add('active');
+
+  });
+});
