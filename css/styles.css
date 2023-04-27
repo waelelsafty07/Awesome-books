@@ -83,6 +83,50 @@ ul li:not(:last-child) {
   margin: 1rem;
 }
 
+#copyright {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem 3rem;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.copyright-paragraph {
+  border: 4px solid black;
+  padding: 1.5rem;
+}
+
+
+.contact-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+  padding: 5rem 0;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.contact__title {
+  font-size: 3.5rem;
+  margin-bottom: 40px;
+}
+
+.contact-list {
+  list-style: disc;
+}
+
+.hidden {
+  display: none;
+}
+
 footer div {
   margin: 1rem;
   border: 2px solid black;
