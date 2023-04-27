@@ -77,12 +77,50 @@ if (addBtn) {
 }
 
 const dataOfBooks = book.getLocalStorage();
-dataOfBooks.forEach((book) => {
-  const { bookItemDiv } = addBookToList(book);
-  booksContainer.appendChild(bookItemDiv);
-});
+if (dataOfBooks.length > 0) {
+  dataOfBooks.forEach((book) => {
+    const { bookItemDiv } = addBookToList(book);
+    booksContainer.appendChild(bookItemDiv);
+  });
+} else {
+  booksContainer.innerHTML = 'Empty List';
+  booksContainer.setAttribute('style', 'text-align:center');
+}
 
 const removeBtns = document.querySelectorAll('.btn-remove');
 removeBtns.forEach((btn) => {
   removeBook(btn);
 });
+
+const links = document.querySelectorAll('nav a');
+
+links.forEach((link) => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = link.getAttribute('data-target');
+    document.querySelectorAll('nav a').forEach((link) => {
+      link.classList.remove('active');
+    });
+    document.querySelectorAll('section').forEach((section) => {
+      section.classList.remove('active');
+    });
+
+    link.classList.add('active');
+    document.getElementById(target).classList.add('active');
+  });
+});
+
+const currentDate = new Date();
+
+const options = {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  hour: 'numeric',
+  minute: 'numeric',
+  hour12: true,
+};
+
+const formattedDate = currentDate.toLocaleString('en-US', options);
+
+document.querySelector('.time').innerHTML = formattedDate;

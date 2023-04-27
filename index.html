@@ -9,16 +9,27 @@
     <title>Awesome Book</title>
 </head>
 <body>
-    <header class="header">
+    
+    <nav>
         <h1>Awesome Book</h1>
-    </header>
+        <ul>
+            <li><a href="#" class="active" data-target="display-books">List</a></li>
+            <li><a href="#" data-target="add-book">Add new</a></li>
+            <li><a href="#" data-target="contact">Contact</a></li>
+        </ul>
+    </nav>
 
     <main> 
-        <section class="display-book">
-        </section>
-        <section class="add-book">
+        <div class="time">
             
-            <hr>
+        </div>
+        <section id="display-books" class="active">
+            <h2>All Awesome books</h2>
+            <div class="display-book">
+                
+            </div>
+        </section>
+        <section   id="add-book" class="add-book">
             <h2>Add a new book</h2>
             
             <form>
@@ -38,7 +49,26 @@
                 </div>
             </form>
         </section>
+        <section id="contact">
+            <div class="info-contact">
+                <h2 >Contact Information</h2>
+                <div class="contact-data">
+                    <p>
+                        Do you have any questions or you just want to say "Hello"?, <br />
+                        ou can reach out to us!
+                      </p>
+                      <ul class="contact-list">
+                        <li>Our email:</li>
+                        <li>Our phone number: 0000000000</li>
+                        <li>Our address: Microverse 2.0 City, USA</li>
+                      </ul>
+                </div>
+              </div>
+        </section>
     </main>
+    <footer id="copyright">
+      <p class="copyright-paragraph">Copyright - Awesome Books 2023</p>
+    </footer>
     <script type="module" src="js/index.js"></script>
 </body>
 </html>
