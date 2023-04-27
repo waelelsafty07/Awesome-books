@@ -132,12 +132,24 @@ Opening the index.html with your browser
 
 <!-- AUTHORS -->
 
-## 👥 Author <a name="authors">Foga Kater Amos</a>
+## 👥 Author <a name="authors">Wael Elsafty</a>
 
-👤 **Foga Kater Amos**
+👤 **Wael Elsafty**
 
 - GitHub: [@githubhandle](https://github.com/waelelsafty07)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/waelelsafty07/)
+
+👤 **George D. Kruah**
+
+- GitHub: [@dfizzkruah93](https://github.com/dfizzkruah93)
+- LinkedIn: [george-d-kruah-2775ab180](https://linkedin.com/in/george-d-kruah-2775ab180)
+- Twitter: [@DKruah](https://github.com/Kruah)
+
+👤 **Martín Ezequiel González**
+
+- GitHub: [@Mar12358](https://github.com/Mar12358)
+- Twitter: [@MarezegonZ](https://twitter.com/MarezegonZ)
+- LinkedIn: [Martin Ezequiel Gonzalez](https://www.linkedin.com/in/martin-ezequiel-gonzalez-30a413260/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
